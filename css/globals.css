@@ -1,0 +1,399 @@
+/* Setup Styles - Extended Starter CSS for Rapid Development */
+
+/* 1. CSS Variables: Theme, Typography, Spacing, Shadows */
+:root {
+  /* Color Palette */
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #e74c3c;
+  --warning-color: #f1c40f;
+  --info-color: #8e44ad;
+  --success-color: #27ae60;
+  --error-color: #c0392b;
+  --light-color: #f5f6fa;
+  --dark-color: #222f3e;
+  --border-color: #e1e1e1;
+  --input-bg: #fff;
+  --input-border: #ccc;
+
+  /* Typography */
+  --heading-font: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --body-font: 'Roboto', Arial, sans-serif;
+  --monospace-font: 'Fira Mono', 'Consolas', monospace;
+  --base-font-size: 16px;
+  --small-font-size: 0.875rem;
+  --large-font-size: 1.5rem;
+
+  /* Spacing */
+  --xs-space: 0.25rem;
+  --sm-space: 0.5rem;
+  --md-space: 1rem;
+  --lg-space: 2rem;
+  --xl-space: 4rem;
+
+  /* Border Radius & Shadows */
+  --border-radius: 6px;
+  --border-radius-lg: 1rem;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+
+  /* Transitions */
+  --transition-speed: 0.2s;
+  --transition-fast: 0.1s;
+  --transition-slow: 0.4s;
+
+  /* Container */
+  --container-width: 1200px;
+}
+
+/* 2. Reset & Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--base-font-size);
+  background: var(--light-color);
+  color: var(--dark-color);
+  font-family: var(--body-font);
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  padding: var(--md-space);
+  background: var(--light-color);
+}
+
+/* 3. Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-bottom: var(--sm-space);
+  line-height: 1.2;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: var(--small-font-size); }
+
+p, ul, ol {
+  margin-bottom: var(--md-space);
+}
+
+code, pre {
+  font-family: var(--monospace-font);
+  background: var(--input-bg);
+  color: var(--accent-color);
+  border-radius: var(--border-radius);
+  padding: var(--xs-space) var(--sm-space);
+}
+
+small {
+  font-size: var(--small-font-size);
+}
+
+/* 4. Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover, a:focus {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* 5. Buttons */
+button, .btn {
+  display: inline-block;
+  padding: var(--sm-space) var(--lg-space);
+  border: none;
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
+  color: #fff;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition-speed), box-shadow var(--transition-speed);
+  box-shadow: var(--shadow-sm);
+}
+button:hover, .btn:hover, button:focus, .btn:focus {
+  background: var(--secondary-color);
+  box-shadow: var(--shadow-md);
+}
+.btn-accent { background: var(--accent-color); }
+.btn-success { background: var(--success-color); }
+.btn-warning { background: var(--warning-color); }
+.btn-error { background: var(--error-color); }
+
+/* 6. Forms */
+input, textarea, select {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  padding: var(--sm-space);
+  font-family: var(--body-font);
+  background: var(--input-bg);
+  margin-bottom: var(--md-space);
+  transition: border-color var(--transition-speed);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: var(--xs-space);
+  display: block;
+  color: var(--dark-color);
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--md-space);
+  margin-bottom: var(--md-space);
+}
+
+legend {
+  padding: 0 var(--sm-space);
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* 7. Card Component */
+.card {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--lg-space);
+  margin-bottom: var(--md-space);
+}
+.card-header {
+  font-size: var(--large-font-size);
+  margin-bottom: var(--sm-space);
+}
+.card-footer {
+  margin-top: var(--sm-space);
+  text-align: right;
+}
+
+/* 8. Utility Classes */
+.mt-xs { margin-top: var(--xs-space); }
+.mt-sm { margin-top: var(--sm-space); }
+.mt-md { margin-top: var(--md-space); }
+.mt-lg { margin-top: var(--lg-space); }
+.mt-xl { margin-top: var(--xl-space); }
+.mb-xs { margin-bottom: var(--xs-space); }
+.mb-sm { margin-bottom: var(--sm-space); }
+.mb-md { margin-bottom: var(--md-space); }
+.mb-lg { margin-bottom: var(--lg-space); }
+.mb-xl { margin-bottom: var(--xl-space); }
+.p-xs { padding: var(--xs-space); }
+.p-sm { padding: var(--sm-space); }
+.p-md { padding: var(--md-space); }
+.p-lg { padding: var(--lg-space); }
+.p-xl { padding: var(--xl-space); }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+.hide { display: none !important; }
+.show { display: block !important; }
+.flex { display: flex; }
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.gap-xs { gap: var(--xs-space); }
+.gap-sm { gap: var(--sm-space); }
+.gap-md { gap: var(--md-space); }
+.gap-lg { gap: var(--lg-space); }
+
+/* 9. Container Layouts */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: var(--md-space);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -var(--sm-space);
+  margin-right: -var(--sm-space);
+}
+.col {
+  flex: 1;
+  padding-left: var(--sm-space);
+  padding-right: var(--sm-space);
+}
+
+/* 10. Alerts */
+.alert {
+  padding: var(--md-space);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--md-space);
+  font-weight: 500;
+}
+.alert-info { background: var(--info-color); color: #fff; }
+.alert-success { background: var(--success-color); color: #fff; }
+.alert-warning { background: var(--warning-color); color: #fff; }
+.alert-error { background: var(--error-color); color: #fff; }
+
+/* 11. Badges */
+.badge {
+  display: inline-block;
+  padding: var(--xs-space) var(--sm-space);
+  border-radius: var(--border-radius);
+  background: var(--primary-color);
+  color: #fff;
+  font-size: var(--small-font-size);
+}
+.badge-accent { background: var(--accent-color); }
+.badge-success { background: var(--success-color); }
+.badge-warning { background: var(--warning-color); }
+.badge-error { background: var(--error-color); }
+
+/* 12. Images & Media */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  display: block;
+}
+
+/* 13. Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--md-space);
+}
+th, td {
+  border: 1px solid var(--border-color);
+  padding: var(--sm-space);
+  text-align: left;
+}
+th {
+  background: var(--light-color);
+  color: var(--primary-color);
+}
+
+/* 14. Responsive Helpers */
+@media (max-width: 768px) {
+  .container {
+    padding: var(--sm-space);
+  }
+  .row {
+    flex-direction: column;
+  }
+}
+
+/* 15. Loader (Spinner) */
+.loader,
+.spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--primary-color);
+  border-top: 3px solid var(--light-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 16. Modal Popup */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(34,47,62,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.modal-content {
+  background: #fff;
+  border-radius: var(--border-radius-lg);
+  padding: var(--lg-space);
+  box-shadow: var(--shadow-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+/* 17. Toast */
+.toast {
+  position: fixed;
+  bottom: var(--lg-space);
+  right: var(--lg-space);
+  background: var(--accent-color);
+  color: #fff;
+  padding: var(--md-space) var(--lg-space);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  z-index: 9999;
+  animation: fadeIn var(--transition-speed) ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* 18. Progress Bar */
+.progress-bar {
+  width: 100%;
+  background: var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  height: 1rem;
+}
+.progress-bar-inner {
+  height: 100%;
+  background: var(--primary-color);
+  width: 0;
+  transition: width var(--transition-speed) linear;
+}
+
+/* 19. Accordion */
+.accordion {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.accordion-header {
+  background: var(--light-color);
+  padding: var(--md-space);
+  cursor: pointer;
+  font-weight: bold;
+}
+.accordion-body {
+  background: #fff;
+  padding: var(--md-space);
+  display: none;
+}
+.accordion.active .accordion-body {
+  display: block;
+}
+
+/* usage*/
+/*
+  - Change theme colors by editing variables in :root.
+  - Use .card, .badge, .alert, .modal, .toast for ready-made components.
+  - Use .container, .row, .col for page layouts.
+  - Use utility classes for spacing, flex, text alignment, display, and gap.
+  - Easily extend or override styles for your own components.
+  - All variables can be used in your custom CSS: e.g., color: var(--primary-color);
+*/
